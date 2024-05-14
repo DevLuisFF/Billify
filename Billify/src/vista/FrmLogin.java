@@ -33,8 +33,48 @@ public class FrmLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelizquierda = new javax.swing.JPanel();
+        etilogo = new javax.swing.JLabel();
+        Panelderecha = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panelizquierda.setBackground(new java.awt.Color(255, 255, 255));
+        panelizquierda.setPreferredSize(new java.awt.Dimension(350, 500));
+
+        etilogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etilogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LogoBillify.png"))); // NOI18N
+
+        javax.swing.GroupLayout panelizquierdaLayout = new javax.swing.GroupLayout(panelizquierda);
+        panelizquierda.setLayout(panelizquierdaLayout);
+        panelizquierdaLayout.setHorizontalGroup(
+            panelizquierdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(etilogo, javax.swing.GroupLayout.PREFERRED_SIZE, 350, Short.MAX_VALUE)
+        );
+        panelizquierdaLayout.setVerticalGroup(
+            panelizquierdaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(etilogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(panelizquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Panelderecha.setBackground(new java.awt.Color(255, 255, 255));
+        Panelderecha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Panelderecha.setPreferredSize(new java.awt.Dimension(350, 500));
+
+        javax.swing.GroupLayout PanelderechaLayout = new javax.swing.GroupLayout(Panelderecha);
+        Panelderecha.setLayout(PanelderechaLayout);
+        PanelderechaLayout.setHorizontalGroup(
+            PanelderechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 348, Short.MAX_VALUE)
+        );
+        PanelderechaLayout.setVerticalGroup(
+            PanelderechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 498, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(Panelderecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -75,5 +115,8 @@ public class FrmLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Panelderecha;
+    private javax.swing.JLabel etilogo;
+    private javax.swing.JPanel panelizquierda;
     // End of variables declaration//GEN-END:variables
 }
