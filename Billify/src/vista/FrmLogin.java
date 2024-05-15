@@ -36,6 +36,16 @@ public class FrmLogin extends javax.swing.JFrame {
         panelizquierda = new javax.swing.JPanel();
         etilogo = new javax.swing.JLabel();
         Panelderecha = new javax.swing.JPanel();
+        userlabel = new javax.swing.JLabel();
+        nombrelabel = new javax.swing.JLabel();
+        nombretxt = new javax.swing.JTextField();
+        contraseñalabel = new javax.swing.JLabel();
+        contraseñatxt = new javax.swing.JPasswordField();
+        BtnAcceder = new javax.swing.JPanel();
+        accederlabel = new javax.swing.JLabel();
+        olvidastecontraseñalabel = new javax.swing.JLabel();
+        BtnRecuperar = new javax.swing.JPanel();
+        restablecerlabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,18 +70,108 @@ public class FrmLogin extends javax.swing.JFrame {
         getContentPane().add(panelizquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         Panelderecha.setBackground(new java.awt.Color(255, 255, 255));
-        Panelderecha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Panelderecha.setPreferredSize(new java.awt.Dimension(350, 500));
+
+        userlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user.png"))); // NOI18N
+
+        nombrelabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        nombrelabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/userblack16.png"))); // NOI18N
+        nombrelabel.setText("Nombre:");
+
+        nombretxt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        contraseñalabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        contraseñalabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/key.png"))); // NOI18N
+        contraseñalabel.setText("Contraseña:");
+
+        contraseñatxt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        BtnAcceder.setBackground(new java.awt.Color(56, 182, 255));
+        BtnAcceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        accederlabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        accederlabel.setForeground(new java.awt.Color(255, 255, 255));
+        accederlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        accederlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/angle-right.png"))); // NOI18N
+        accederlabel.setText("Acceder");
+
+        javax.swing.GroupLayout BtnAccederLayout = new javax.swing.GroupLayout(BtnAcceder);
+        BtnAcceder.setLayout(BtnAccederLayout);
+        BtnAccederLayout.setHorizontalGroup(
+            BtnAccederLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(accederlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+        );
+        BtnAccederLayout.setVerticalGroup(
+            BtnAccederLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(accederlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        olvidastecontraseñalabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        olvidastecontraseñalabel.setText("¿Olvidaste tu contraseña?");
+
+        BtnRecuperar.setBackground(new java.awt.Color(255, 255, 255));
+        BtnRecuperar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        restablecerlabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        restablecerlabel.setForeground(new java.awt.Color(126, 217, 87));
+        restablecerlabel.setText("Restablecer");
+
+        javax.swing.GroupLayout BtnRecuperarLayout = new javax.swing.GroupLayout(BtnRecuperar);
+        BtnRecuperar.setLayout(BtnRecuperarLayout);
+        BtnRecuperarLayout.setHorizontalGroup(
+            BtnRecuperarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(restablecerlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+        BtnRecuperarLayout.setVerticalGroup(
+            BtnRecuperarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(restablecerlabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout PanelderechaLayout = new javax.swing.GroupLayout(Panelderecha);
         Panelderecha.setLayout(PanelderechaLayout);
         PanelderechaLayout.setHorizontalGroup(
             PanelderechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
+            .addGroup(PanelderechaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelderechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelderechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(contraseñalabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nombrelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(PanelderechaLayout.createSequentialGroup()
+                            .addGap(114, 114, 114)
+                            .addComponent(userlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(contraseñatxt, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                        .addComponent(nombretxt)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelderechaLayout.createSequentialGroup()
+                            .addComponent(BtnAcceder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(24, 24, 24)))
+                    .addGroup(PanelderechaLayout.createSequentialGroup()
+                        .addComponent(olvidastecontraseñalabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnRecuperar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         PanelderechaLayout.setVerticalGroup(
             PanelderechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGroup(PanelderechaLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(userlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nombrelabel)
+                .addGap(18, 18, 18)
+                .addComponent(nombretxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(contraseñalabel)
+                .addGap(18, 18, 18)
+                .addComponent(contraseñatxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(BtnAcceder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(PanelderechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BtnRecuperar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(olvidastecontraseñalabel, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
+                .addGap(60, 60, 60))
         );
 
         getContentPane().add(Panelderecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, -1, -1));
@@ -115,8 +215,18 @@ public class FrmLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BtnAcceder;
+    private javax.swing.JPanel BtnRecuperar;
     private javax.swing.JPanel Panelderecha;
+    private javax.swing.JLabel accederlabel;
+    private javax.swing.JLabel contraseñalabel;
+    private javax.swing.JPasswordField contraseñatxt;
     private javax.swing.JLabel etilogo;
+    private javax.swing.JLabel nombrelabel;
+    private javax.swing.JTextField nombretxt;
+    private javax.swing.JLabel olvidastecontraseñalabel;
     private javax.swing.JPanel panelizquierda;
+    private javax.swing.JLabel restablecerlabel;
+    private javax.swing.JLabel userlabel;
     // End of variables declaration//GEN-END:variables
 }
