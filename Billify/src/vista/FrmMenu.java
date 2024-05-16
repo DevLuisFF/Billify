@@ -76,29 +76,37 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenuItem4.setText("jMenuItem4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        UsuariosMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BarraMenu.setBackground(new java.awt.Color(255, 255, 255));
+        BarraMenu.setBorder(null);
+
+        UsuariosMenu.setBackground(new java.awt.Color(255, 255, 255));
+        UsuariosMenu.setBorder(null);
         UsuariosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/userblack16.png"))); // NOI18N
         UsuariosMenu.setText("Usuarios");
         UsuariosMenu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         UsuariosMenu.setPreferredSize(new java.awt.Dimension(150, 30));
 
+        NuevoUsuarioItem.setBackground(new java.awt.Color(255, 255, 255));
         NuevoUsuarioItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         NuevoUsuarioItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user-add.png"))); // NOI18N
         NuevoUsuarioItem.setText("Nuevo Usuario");
-        NuevoUsuarioItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        NuevoUsuarioItem.setBorder(null);
         UsuariosMenu.add(NuevoUsuarioItem);
 
+        GestionUsuarioItem.setBackground(new java.awt.Color(255, 255, 255));
         GestionUsuarioItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         GestionUsuarioItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users-alt.png"))); // NOI18N
         GestionUsuarioItem.setText("Gestionar Usuarios");
-        GestionUsuarioItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        GestionUsuarioItem.setBorder(null);
         UsuariosMenu.add(GestionUsuarioItem);
 
         BarraMenu.add(UsuariosMenu);
 
-        ProductosMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ProductosMenu.setBackground(new java.awt.Color(255, 255, 255));
+        ProductosMenu.setBorder(null);
         ProductosMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cube.png"))); // NOI18N
         ProductosMenu.setText("Productos");
         ProductosMenu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
@@ -107,7 +115,7 @@ public class FrmMenu extends javax.swing.JFrame {
         NuevoProductoItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         NuevoProductoItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         NuevoProductoItem.setText("Nuevo Producto");
-        NuevoProductoItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        NuevoProductoItem.setBorder(null);
         NuevoProductoItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NuevoProductoItemActionPerformed(evt);
@@ -118,18 +126,19 @@ public class FrmMenu extends javax.swing.JFrame {
         GestionProductoItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         GestionProductoItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pencil.png"))); // NOI18N
         GestionProductoItem.setText("Gestionar Producto");
-        GestionProductoItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        GestionProductoItem.setBorder(null);
         ProductosMenu.add(GestionProductoItem);
 
         ActualizarStockItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         ActualizarStockItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/refresh.png"))); // NOI18N
         ActualizarStockItem.setText("Actualizar Stock");
-        ActualizarStockItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ActualizarStockItem.setBorder(null);
         ProductosMenu.add(ActualizarStockItem);
 
         BarraMenu.add(ProductosMenu);
 
-        ClientesMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ClientesMenu.setBackground(new java.awt.Color(255, 255, 255));
+        ClientesMenu.setBorder(null);
         ClientesMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users-alt.png"))); // NOI18N
         ClientesMenu.setText("Clientes");
         ClientesMenu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
@@ -138,16 +147,19 @@ public class FrmMenu extends javax.swing.JFrame {
         NuevoClienteItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         NuevoClienteItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user-add.png"))); // NOI18N
         NuevoClienteItem.setText("Nuevo Cliente");
+        NuevoClienteItem.setBorder(null);
         ClientesMenu.add(NuevoClienteItem);
 
         GestionarClienteItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         GestionarClienteItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users-alt.png"))); // NOI18N
         GestionarClienteItem.setText("Gestionar Cliente");
+        GestionarClienteItem.setBorder(null);
         ClientesMenu.add(GestionarClienteItem);
 
         BarraMenu.add(ClientesMenu);
 
-        CategoriasMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CategoriasMenu.setBackground(new java.awt.Color(255, 255, 255));
+        CategoriasMenu.setBorder(null);
         CategoriasMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/apps.png"))); // NOI18N
         CategoriasMenu.setText("Categorias");
         CategoriasMenu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
@@ -156,17 +168,19 @@ public class FrmMenu extends javax.swing.JFrame {
         NuevaCategoriaItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         NuevaCategoriaItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         NuevaCategoriaItem.setText("Nueva Categoria");
-        NuevaCategoriaItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        NuevaCategoriaItem.setBorder(null);
         CategoriasMenu.add(NuevaCategoriaItem);
 
         GestionarCategoriaItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         GestionarCategoriaItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pencil.png"))); // NOI18N
         GestionarCategoriaItem.setText("Gestionar Categoria");
+        GestionarCategoriaItem.setBorder(null);
         CategoriasMenu.add(GestionarCategoriaItem);
 
         BarraMenu.add(CategoriasMenu);
 
-        FacturarMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        FacturarMenu.setBackground(new java.awt.Color(255, 255, 255));
+        FacturarMenu.setBorder(null);
         FacturarMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/document.png"))); // NOI18N
         FacturarMenu.setText("Facturar");
         FacturarMenu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
@@ -175,18 +189,19 @@ public class FrmMenu extends javax.swing.JFrame {
         NuevaVentaItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         NuevaVentaItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         NuevaVentaItem.setText("Nueva Venta");
-        NuevaVentaItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        NuevaVentaItem.setBorder(null);
         FacturarMenu.add(NuevaVentaItem);
 
         GestionarVentaItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         GestionarVentaItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pencil.png"))); // NOI18N
         GestionarVentaItem.setText("Gestionar Ventas");
-        GestionarVentaItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        GestionarVentaItem.setBorder(null);
         FacturarMenu.add(GestionarVentaItem);
 
         BarraMenu.add(FacturarMenu);
 
-        ReportesMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ReportesMenu.setBackground(new java.awt.Color(255, 255, 255));
+        ReportesMenu.setBorder(null);
         ReportesMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/document-signed.png"))); // NOI18N
         ReportesMenu.setText("Reportes");
         ReportesMenu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
@@ -195,28 +210,31 @@ public class FrmMenu extends javax.swing.JFrame {
         ReporteClientesItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         ReporteClientesItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users-alt.png"))); // NOI18N
         ReporteClientesItem.setText("Reportes Clientes");
-        ReporteClientesItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ReporteClientesItem.setBorder(null);
         ReportesMenu.add(ReporteClientesItem);
 
         ReporteCategoriaItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         ReporteCategoriaItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/apps.png"))); // NOI18N
         ReporteCategoriaItem.setText("Reportes Categoria");
-        ReporteCategoriaItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ReporteCategoriaItem.setBorder(null);
         ReportesMenu.add(ReporteCategoriaItem);
 
         ReporteProductosItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         ReporteProductosItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cube.png"))); // NOI18N
         ReporteProductosItem.setText("Reportes Productos");
+        ReporteProductosItem.setBorder(null);
         ReportesMenu.add(ReporteProductosItem);
 
         ReporteVentasItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         ReporteVentasItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shopping-cart.png"))); // NOI18N
         ReporteVentasItem.setText("Reportes Ventas");
+        ReporteVentasItem.setBorder(null);
         ReportesMenu.add(ReporteVentasItem);
 
         BarraMenu.add(ReportesMenu);
 
-        HistorialMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        HistorialMenu.setBackground(new java.awt.Color(255, 255, 255));
+        HistorialMenu.setBorder(null);
         HistorialMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/stats.png"))); // NOI18N
         HistorialMenu.setText("Historial");
         HistorialMenu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
@@ -225,12 +243,13 @@ public class FrmMenu extends javax.swing.JFrame {
         VerHistorialItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         VerHistorialItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/stats.png"))); // NOI18N
         VerHistorialItem.setText("Ver Historial");
-        VerHistorialItem.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        VerHistorialItem.setBorder(null);
         HistorialMenu.add(VerHistorialItem);
 
         BarraMenu.add(HistorialMenu);
 
-        CerrarMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        CerrarMenu.setBackground(new java.awt.Color(255, 255, 255));
+        CerrarMenu.setBorder(null);
         CerrarMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
         CerrarMenu.setText("Cerrar ");
         CerrarMenu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
@@ -239,6 +258,7 @@ public class FrmMenu extends javax.swing.JFrame {
         cerrarItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         cerrarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
         cerrarItem.setText("Cerrar");
+        cerrarItem.setBorder(null);
         CerrarMenu.add(cerrarItem);
 
         BarraMenu.add(CerrarMenu);

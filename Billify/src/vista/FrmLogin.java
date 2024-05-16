@@ -5,7 +5,10 @@
  */
 package vista;
 
+import controlador.Ctrl_Usuario;
 import java.awt.Dimension;
+import javax.swing.JOptionPane;
+import modelo.Usuario;
 
 /**
  *
@@ -48,6 +51,7 @@ public class FrmLogin extends javax.swing.JFrame {
         restablecerlabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelizquierda.setBackground(new java.awt.Color(255, 255, 255));
@@ -80,6 +84,11 @@ public class FrmLogin extends javax.swing.JFrame {
         nombrelabel.setText("Nombre:");
 
         nombretxt.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        nombretxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombretxtKeyPressed(evt);
+            }
+        });
 
         contraseñalabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         contraseñalabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/key.png"))); // NOI18N
@@ -89,12 +98,22 @@ public class FrmLogin extends javax.swing.JFrame {
 
         BtnAcceder.setBackground(new java.awt.Color(56, 182, 255));
         BtnAcceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnAcceder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnAccederMouseClicked(evt);
+            }
+        });
 
         accederlabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         accederlabel.setForeground(new java.awt.Color(255, 255, 255));
         accederlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         accederlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/angle-right.png"))); // NOI18N
         accederlabel.setText("Acceder");
+        accederlabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                accederlabelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout BtnAccederLayout = new javax.swing.GroupLayout(BtnAcceder);
         BtnAcceder.setLayout(BtnAccederLayout);
@@ -179,6 +198,20 @@ public class FrmLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void accederlabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accederlabelMouseClicked
+                this.login();
+    }//GEN-LAST:event_accederlabelMouseClicked
+
+    private void BtnAccederMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAccederMouseClicked
+        this.login();
+    }//GEN-LAST:event_BtnAccederMouseClicked
+
+    private void nombretxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombretxtKeyPressed
+        if (evt.getKeyCode() == evt.VK_ENTER) {
+            contraseñatxt.requestFocus();
+        }
+    }//GEN-LAST:event_nombretxtKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -229,4 +262,22 @@ public class FrmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel restablecerlabel;
     private javax.swing.JLabel userlabel;
     // End of variables declaration//GEN-END:variables
+    //metodo login
+    private void login(){
+        if(!nombretxt.getText().isEmpty() && !contraseñatxt.getText().isEmpty()){
+            Ctrl_Usuario controlusuario = new Ctrl_Usuario();
+            Usuario usuario = new Usuario();
+            usuario.setUsuario(nombretxt.getText().trim());
+            usuario.setContraseña(contraseñatxt.getText().trim());
+            if (controlusuario.loginUser(usuario)) {
+                JOptionPane.showMessageDialog(null,"Log in Correcto");
+            } else {
+                FrmUsuarioClaveError userclave = new FrmUsuarioClaveError();
+                userclave.setVisible(true);
+            }
+        }else{
+            FrmCredencialesVacios vacios = new FrmCredencialesVacios();
+            vacios.setVisible(true);
+        }
+    }
 }
