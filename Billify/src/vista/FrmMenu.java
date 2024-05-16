@@ -13,15 +13,12 @@ import java.awt.Dimension;
  */
 public class FrmMenu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmMenu
-     */
+    
     public FrmMenu() {
         initComponents();
         this.setSize(new Dimension(1200, 700));
-        this.setExtendedState(this.MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
-        this.setTitle("Menu - Billify");
+        this.setTitle("Menu - Billify");        
     }
 
     /**
@@ -32,12 +29,15 @@ public class FrmMenu extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jDesktopPane_menu = new javax.swing.JDesktopPane();
+        fondo = new javax.swing.JLabel();
         BarraMenu = new javax.swing.JMenuBar();
         UsuariosMenu = new javax.swing.JMenu();
         NuevoUsuarioItem = new javax.swing.JMenuItem();
@@ -78,6 +78,19 @@ public class FrmMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jDesktopPane_menu.setBackground(new java.awt.Color(255, 255, 255));
+        jDesktopPane_menu.setForeground(new java.awt.Color(255, 255, 255));
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), jDesktopPane_menu, org.jdesktop.beansbinding.BeanProperty.create("background"));
+        bindingGroup.addBinding(binding);
+
+        fondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/FondoBlanco.jpg"))); // NOI18N
+        jDesktopPane_menu.add(fondo);
+        fondo.setBounds(0, 0, 1200, 660);
+
+        getContentPane().add(jDesktopPane_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 1200, 660));
 
         BarraMenu.setBackground(new java.awt.Color(255, 255, 255));
         BarraMenu.setBorder(null);
@@ -250,13 +263,13 @@ public class FrmMenu extends javax.swing.JFrame {
 
         CerrarMenu.setBackground(new java.awt.Color(255, 255, 255));
         CerrarMenu.setBorder(null);
-        CerrarMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
+        CerrarMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross-circle.png"))); // NOI18N
         CerrarMenu.setText("Cerrar ");
         CerrarMenu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         CerrarMenu.setPreferredSize(new java.awt.Dimension(150, 30));
 
         cerrarItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        cerrarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
+        cerrarItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cross-circle.png"))); // NOI18N
         cerrarItem.setText("Cerrar");
         cerrarItem.setBorder(null);
         CerrarMenu.add(cerrarItem);
@@ -264,6 +277,8 @@ public class FrmMenu extends javax.swing.JFrame {
         BarraMenu.add(CerrarMenu);
 
         setJMenuBar(BarraMenu);
+
+        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -334,10 +349,13 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenu UsuariosMenu;
     private javax.swing.JMenuItem VerHistorialItem;
     private javax.swing.JMenuItem cerrarItem;
+    private javax.swing.JLabel fondo;
+    private javax.swing.JDesktopPane jDesktopPane_menu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem7;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

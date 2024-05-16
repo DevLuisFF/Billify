@@ -7,7 +7,6 @@ package vista;
 
 import controlador.Ctrl_Usuario;
 import java.awt.Dimension;
-import javax.swing.JOptionPane;
 import modelo.Usuario;
 
 /**
@@ -199,7 +198,7 @@ public class FrmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void accederlabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accederlabelMouseClicked
-                this.login();
+        this.login();
     }//GEN-LAST:event_accederlabelMouseClicked
 
     private void BtnAccederMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAccederMouseClicked
@@ -263,19 +262,21 @@ public class FrmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel userlabel;
     // End of variables declaration//GEN-END:variables
     //metodo login
-    private void login(){
-        if(!nombretxt.getText().isEmpty() && !contraseñatxt.getText().isEmpty()){
+    private void login() {
+        if (!nombretxt.getText().isEmpty() && !contraseñatxt.getText().isEmpty()) {
             Ctrl_Usuario controlusuario = new Ctrl_Usuario();
             Usuario usuario = new Usuario();
             usuario.setUsuario(nombretxt.getText().trim());
             usuario.setContraseña(contraseñatxt.getText().trim());
             if (controlusuario.loginUser(usuario)) {
-                JOptionPane.showMessageDialog(null,"Log in Correcto");
+                FrmMenu menu = new FrmMenu();
+                menu.setVisible(true);
+                this.setVisible(false);
             } else {
                 FrmUsuarioClaveError userclave = new FrmUsuarioClaveError();
                 userclave.setVisible(true);
             }
-        }else{
+        } else {
             FrmCredencialesVacios vacios = new FrmCredencialesVacios();
             vacios.setVisible(true);
         }
