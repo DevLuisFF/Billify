@@ -37,7 +37,7 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jDesktopPane_menu = new javax.swing.JDesktopPane();
-        fondo = new javax.swing.JLabel();
+        background = new javax.swing.JPanel();
         BarraMenu = new javax.swing.JMenuBar();
         UsuariosMenu = new javax.swing.JMenu();
         NuevoUsuarioItem = new javax.swing.JMenuItem();
@@ -79,16 +79,14 @@ public class FrmMenu extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jDesktopPane_menu.setBackground(new java.awt.Color(255, 255, 255));
         jDesktopPane_menu.setForeground(new java.awt.Color(255, 255, 255));
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${foreground}"), jDesktopPane_menu, org.jdesktop.beansbinding.BeanProperty.create("background"));
         bindingGroup.addBinding(binding);
 
-        fondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/FondoBlanco.jpg"))); // NOI18N
-        jDesktopPane_menu.add(fondo);
-        fondo.setBounds(0, 0, 1200, 660);
+        background.setBackground(new java.awt.Color(255, 255, 255));
+        jDesktopPane_menu.add(background);
+        background.setBounds(0, 0, 1200, 660);
 
         getContentPane().add(jDesktopPane_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 1200, 660));
 
@@ -174,19 +172,24 @@ public class FrmMenu extends javax.swing.JFrame {
         CategoriasMenu.setBackground(new java.awt.Color(255, 255, 255));
         CategoriasMenu.setBorder(null);
         CategoriasMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/apps.png"))); // NOI18N
-        CategoriasMenu.setText("Categorias");
+        CategoriasMenu.setText("Categorías");
         CategoriasMenu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         CategoriasMenu.setPreferredSize(new java.awt.Dimension(150, 40));
 
         NuevaCategoriaItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         NuevaCategoriaItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
-        NuevaCategoriaItem.setText("Nueva Categoria");
+        NuevaCategoriaItem.setText("Nueva Categoría ");
         NuevaCategoriaItem.setBorder(null);
+        NuevaCategoriaItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NuevaCategoriaItemActionPerformed(evt);
+            }
+        });
         CategoriasMenu.add(NuevaCategoriaItem);
 
         GestionarCategoriaItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         GestionarCategoriaItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pencil.png"))); // NOI18N
-        GestionarCategoriaItem.setText("Gestionar Categoria");
+        GestionarCategoriaItem.setText("Nueva Categoría ");
         GestionarCategoriaItem.setBorder(null);
         CategoriasMenu.add(GestionarCategoriaItem);
 
@@ -287,6 +290,12 @@ public class FrmMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NuevoProductoItemActionPerformed
 
+    private void NuevaCategoriaItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevaCategoriaItemActionPerformed
+        InterCategoria interCategoria = new InterCategoria();
+        jDesktopPane_menu.add(interCategoria);
+        interCategoria.setVisible(true);
+    }//GEN-LAST:event_NuevaCategoriaItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -348,8 +357,8 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JMenu ReportesMenu;
     private javax.swing.JMenu UsuariosMenu;
     private javax.swing.JMenuItem VerHistorialItem;
+    private javax.swing.JPanel background;
     private javax.swing.JMenuItem cerrarItem;
-    private javax.swing.JLabel fondo;
     private javax.swing.JDesktopPane jDesktopPane_menu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem2;

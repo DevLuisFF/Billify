@@ -225,7 +225,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/apps.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Categorias"/>
+            <Property name="text" type="java.lang.String" value="Categor&#xed;as"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto" size="16" style="1"/>
             </Property>
@@ -242,11 +242,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/images/add.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nueva Categoria"/>
+                <Property name="text" type="java.lang.String" value="Nueva Categor&#xed;a "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NuevaCategoriaItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="GestionarCategoriaItem">
               <Properties>
@@ -256,7 +259,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/images/pencil.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Gestionar Categoria"/>
+                <Property name="text" type="java.lang.String" value="Nueva Categor&#xed;a "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
@@ -497,9 +500,6 @@
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="jDesktopPane_menu">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
@@ -517,11 +517,10 @@
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="fondo">
+        <Container class="javax.swing.JPanel" name="background">
           <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/FondoBlanco.jpg"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -529,7 +528,9 @@
               <AbsoluteConstraints x="0" y="0" width="1200" height="660"/>
             </Constraint>
           </Constraints>
-        </Component>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

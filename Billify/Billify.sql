@@ -16,6 +16,14 @@ telefono varchar(15) not null,
 estado int(1) not null
 );
 
+-- inserte registros para permitir el login
+insert into tb_usuario(nombre,apellido,usuario,contraseña,telefono,estado)
+values("Luis","Ferreira","luis","12345","0982971037",1);
+
+-- select para el login
+select usuario, contraseña from tb_usuario 
+where usuario = "luis" and contraseña = "12345";
+
 -- creacion tabla clientes
 create table tb_cliente(
 idCliente int (11) auto_increment primary key,
@@ -33,6 +41,8 @@ idCategoria int (11) auto_increment primary key,
 descripcion varchar(200) not null,
 estado int(1) not null
 );
+
+select * from tb_categoria;
 
 -- crear la tabla productos
 create table tb_producto(
