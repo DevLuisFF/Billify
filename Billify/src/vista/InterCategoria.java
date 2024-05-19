@@ -19,6 +19,7 @@ public class InterCategoria extends javax.swing.JInternalFrame {
      */
     public InterCategoria() {
         initComponents();
+        this.setTitle("Nueva Categoría");
     }
 
     /**

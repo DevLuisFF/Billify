@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DevLuisFF/Documents/NetBeansProjects/Billify/src/vista/FrmUsuarioClaveError.java</file>
-            <file>file:/C:/Users/DevLuisFF/Documents/NetBeansProjects/Billify/src/vista/FrmCredencialesVacios.java</file>
             <file>file:/C:/Users/DevLuisFF/Documents/NetBeansProjects/Billify/src/vista/FrmMenu.java</file>
             <file>file:/C:/Users/DevLuisFF/Documents/NetBeansProjects/Billify/src/vista/InterCategoria.java</file>
-            <file>file:/C:/Users/DevLuisFF/Documents/NetBeansProjects/Billify/src/modelo/Usuario.java</file>
             <file>file:/C:/Users/DevLuisFF/Documents/NetBeansProjects/Billify/src/vista/FrmLogin.java</file>
-            <file>file:/C:/Users/DevLuisFF/Documents/NetBeansProjects/Billify/src/controlador/Ctrl_Usuario.java</file>
+            <file>file:/C:/Users/DevLuisFF/Documents/NetBeansProjects/Billify/src/modelo/Categoria.java</file>
+            <file>file:/C:/Users/DevLuisFF/Documents/NetBeansProjects/Billify/src/controlador/Ctrl_Categoria.java</file>
             <file>file:/C:/Users/DevLuisFF/Documents/NetBeansProjects/Billify/src/conexion/Conexion.java</file>
         </group>
     </open-files>
