@@ -30,7 +30,7 @@
 
 ###
 
-<h6 align="left">Lenguaje de Programación:</h6>
+<h4 align="left">Lenguaje de Programación:</h4>
 
 ###
 
@@ -38,7 +38,7 @@
 
 ###
 
-<h6 align="left">Gestión de Dependencias:</h6>
+<h4 align="left">Gestión de Dependencias:</h4>
 
 ###
 
@@ -46,7 +46,7 @@
 
 ###
 
-<h6 align="left">Base de Datos:</h6>
+<h4 align="left">Base de Datos:</h4>
 
 ###
 
@@ -54,7 +54,7 @@
 
 ###
 
-<h6 align="left">Interfaz Gráfica:</h6>
+<h4 align="left">Interfaz Gráfica:</h4>
 
 ###
 
@@ -62,7 +62,7 @@
 
 ###
 
-<h6 align="left">Recursos Gráficos:</h6>
+<h4 align="left">Recursos Gráficos:</h4>
 
 ###
 
@@ -70,7 +70,7 @@
 
 ###
 
-<h6 align="left">Control de Versiones:</h6>
+<h4 align="left">Control de Versiones:</h4>
 
 ###
 
