@@ -393,7 +393,7 @@ public class FrmDashboard extends javax.swing.JFrame {
     private javax.swing.JButton BtnProductos;
     private javax.swing.JButton BtnReportes;
     private javax.swing.JButton BtnUsuarios;
-    private javax.swing.JPanel Content;
+    public static javax.swing.JPanel Content;
     private javax.swing.JPanel Header;
     private javax.swing.JLabel Mensaje;
     private javax.swing.JPanel Menu;

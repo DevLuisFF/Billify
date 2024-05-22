@@ -1,88 +1,86 @@
--- crear la base de datos
-create database Billify;
+-- Crear la base de datos
+CREATE DATABASE Billify;
 
--- se establece que se usara esta base de datos
-use Billify;
+-- Establecer el uso de la base de datos creada
+USE Billify;
 
--- crear las tablas
--- creacion de tabla usuarios
-create table tb_usuario(
-idUsuario int (11) auto_increment primary key,
-nombre varchar(30) not null,
-apellido varchar(30) not null,
-usuario varchar(15) not null,
-contraseña varchar(15) not null,
-telefono varchar(15) not null,
-estado int(1) not null
+-- Crear tabla de usuarios
+CREATE TABLE tb_usuario (
+    idUsuario INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(30) NOT NULL,
+    apellido VARCHAR(30) NOT NULL,
+    usuario VARCHAR(15) NOT NULL,
+    contraseña VARCHAR(15) NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    estado INT(1) NOT NULL
 );
 
--- inserte registros para permitir el login
-insert into tb_usuario(nombre,apellido,usuario,contraseña,telefono,estado)
-values("Luis","Ferreira","luis","12345","0982971037",1);
+-- Insertar registros para permitir el login
+INSERT INTO tb_usuario(nombre, apellido, usuario, contraseña, telefono, estado)
+VALUES ("Luis", "Ferreira", "luis", "12345", "0982971037", 1);
 
--- select para el login
-select usuario, contraseña from tb_usuario 
-where usuario = "luis" and contraseña = "12345";
+-- Select para el login
+SELECT usuario, contraseña FROM tb_usuario 
+WHERE usuario = "luis" AND contraseña = "12345";
 
--- creacion tabla clientes
-create table tb_cliente(
-idCliente int (11) auto_increment primary key,
-nombre varchar(30) not null,
-apellido varchar(30) not null,
-cedula varchar(15) not null,
-telefono varchar(15) not null,
-direccion varchar(100) not null,
-estado int(1) not null
+-- Crear tabla de clientes
+CREATE TABLE tb_cliente (
+    idCliente INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(30) NOT NULL,
+    apellido VARCHAR(30) NOT NULL,
+    cedula VARCHAR(15) NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    direccion VARCHAR(100) NOT NULL,
+    estado INT(1) NOT NULL
 );
 
--- creacion tabla categorias
-create table tb_categoria(
-idCategoria int (11) auto_increment primary key,
-descripcion varchar(200) not null,
-estado int(1) not null
+-- Crear tabla de categorías
+CREATE TABLE tb_categoria (
+    idCategoria INT(11) AUTO_INCREMENT PRIMARY KEY,
+    descripcion VARCHAR(200) NOT NULL,
+    estado INT(1) NOT NULL
 );
 
-select * from tb_categoria;
+-- Mostrar contenido de la tabla de categorías
+SELECT * FROM tb_categoria;
 
--- crear la tabla productos
-create table tb_producto(
-idProducto int (11) auto_increment primary key,
-nombre varchar(100) not null,
-cantidad int(11) not null,
-precio double(10,2) not null,
-descripcion varchar(200) not null,
-porcentajeIva int(2) not null,
-idCategoria int(11) not null,
-estado int(1) not null
+-- Crear tabla de productos
+CREATE TABLE tb_producto (
+    idProducto INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    cantidad INT(11) NOT NULL,
+    precio DOUBLE(10,2) NOT NULL,
+    descripcion VARCHAR(200) NOT NULL,
+    porcentajeIva INT(2) NOT NULL,
+    idCategoria INT(11) NOT NULL,
+    estado INT(1) NOT NULL
 );
 
--- cabecera de venta
-create table tb_cabecera_venta(
-idCabeceraVenta int (11) auto_increment primary key,
-idCliente int(11) not null,
-valorPagar double(10,2) not null,
-fechaVenta date not null,
-estado int(1) not null
+-- Crear tabla de cabecera de venta
+CREATE TABLE tb_cabecera_venta (
+    idCabeceraVenta INT(11) AUTO_INCREMENT PRIMARY KEY,
+    idCliente INT(11) NOT NULL,
+    valorPagar DOUBLE(10,2) NOT NULL,
+    fechaVenta DATE NOT NULL,
+    estado INT(1) NOT NULL
 );
 
--- detalle venta
--- cabecera de venta
-create table tb_detalle_venta(
-idDetalleVenta int (11) auto_increment primary key,
-idCabeceraVenta int(11) not null,
-idProducto int(11) not null,
-cantidad int(11) not null,
-precioUnitario double(10,2) not null,
-subTotal double(10,2) not null,
-Descuento double(10,2) not null,
-iva double(10,2) not null,
-totalPagar double(10,2) not null,
-estado int(1) not null
+-- Crear tabla de detalle de venta
+CREATE TABLE tb_detalle_venta (
+    idDetalleVenta INT(11) AUTO_INCREMENT PRIMARY KEY,
+    idCabeceraVenta INT(11) NOT NULL,
+    idProducto INT(11) NOT NULL,
+    cantidad INT(11) NOT NULL,
+    precioUnitario DOUBLE(10,2) NOT NULL,
+    subTotal DOUBLE(10,2) NOT NULL,
+    Descuento DOUBLE(10,2) NOT NULL,
+    iva DOUBLE(10,2) NOT NULL,
+    totalPagar DOUBLE(10,2) NOT NULL,
+    estado INT(1) NOT NULL
 );
 
+-- Mostrar todas las tablas en la base de datos
+SHOW TABLES;
 
--- muestra de tabla
-show tables;
-
--- muestra general
-select * from tb_usuario;
+-- Mostrar contenido de la tabla de usuarios
+SELECT * FROM tb_usuario;

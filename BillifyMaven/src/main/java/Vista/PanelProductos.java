@@ -9,11 +9,13 @@ import java.sql.Connection;
 import Conexion.Conexion;
 import Controlador.Ctrl_Producto;
 import Modelo.Producto;
+import java.awt.BorderLayout;
 import java.awt.HeadlessException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import static Vista.FrmDashboard.Content;
 
 /**
  *
@@ -53,7 +55,7 @@ public class PanelProductos extends javax.swing.JPanel {
         categoriaLabel = new javax.swing.JLabel();
         ComboCategoria = new javax.swing.JComboBox<>();
         BtnGuardar = new javax.swing.JButton();
-        BtnGestionarCategoria = new javax.swing.JButton();
+        BtnGestionarProducto = new javax.swing.JButton();
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -99,11 +101,16 @@ public class PanelProductos extends javax.swing.JPanel {
             }
         });
 
-        BtnGestionarCategoria.setBackground(new java.awt.Color(0, 110, 144));
-        BtnGestionarCategoria.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        BtnGestionarCategoria.setForeground(new java.awt.Color(255, 255, 255));
-        BtnGestionarCategoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/floppy-disk-pen.png"))); // NOI18N
-        BtnGestionarCategoria.setText("Gestión Productos");
+        BtnGestionarProducto.setBackground(new java.awt.Color(0, 110, 144));
+        BtnGestionarProducto.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        BtnGestionarProducto.setForeground(new java.awt.Color(255, 255, 255));
+        BtnGestionarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/floppy-disk-pen.png"))); // NOI18N
+        BtnGestionarProducto.setText("Gestión Productos");
+        BtnGestionarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGestionarProductoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
@@ -128,16 +135,13 @@ public class PanelProductos extends javax.swing.JPanel {
                         .addComponent(txtcantidad))
                     .addComponent(txtnombre))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(NuevoTituloLabel)
-                .addGap(290, 290, 290))
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addGap(180, 180, 180)
                 .addComponent(BtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(BtnGestionarCategoria)
+                .addComponent(BtnGestionarProducto)
                 .addContainerGap(176, Short.MAX_VALUE))
+            .addComponent(NuevoTituloLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,7 +174,7 @@ public class PanelProductos extends javax.swing.JPanel {
                     .addComponent(ComboCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnGestionarCategoria)
+                    .addComponent(BtnGestionarProducto)
                     .addComponent(BtnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
@@ -265,10 +269,20 @@ public class PanelProductos extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboCategoriaActionPerformed
 
+    private void BtnGestionarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGestionarProductoActionPerformed
+        GestionarProductoPanel gestionarProductoPanel = new GestionarProductoPanel();
+        gestionarProductoPanel.setSize(752, 436);
+        gestionarProductoPanel.setLocation(0, 0);
+        FrmDashboard.Content.removeAll();
+        Content.add(gestionarProductoPanel, BorderLayout.CENTER);
+        Content.revalidate();
+        Content.repaint();
+    }//GEN-LAST:event_BtnGestionarProductoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JButton BtnGestionarCategoria;
+    private javax.swing.JButton BtnGestionarProducto;
     private javax.swing.JButton BtnGuardar;
     private javax.swing.JLabel CantidadLabel;
     private javax.swing.JComboBox<String> ComboCategoria;

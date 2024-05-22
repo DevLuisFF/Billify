@@ -4,17 +4,20 @@
  */
 package Vista;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author DevLuisFF
  */
 public class GestionarProductoPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form GestionarProductoPanel
-     */
+    private int idProducto;
+    int obtenerIdCategoria = 0;
+    
     public GestionarProductoPanel() {
         initComponents();
+        this.setSize(new Dimension(752, 436));
     }
 
     /**
@@ -27,18 +30,160 @@ public class GestionarProductoPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         Background = new javax.swing.JPanel();
+        labeltitulo = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablaProductos = new javax.swing.JTable();
+        BtnActualizar = new javax.swing.JButton();
+        BtnEliminar = new javax.swing.JButton();
+        BtnVolver = new javax.swing.JButton();
+        nombrelabel = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        labelcantidad = new javax.swing.JLabel();
+        txtcantidad = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        txtPrecio = new javax.swing.JTextField();
+        descripcionlabel = new javax.swing.JLabel();
+        txtdescripcion = new javax.swing.JTextField();
+        ivalabel = new javax.swing.JLabel();
+        categorialabel = new javax.swing.JLabel();
+        comboiva = new javax.swing.JComboBox<>();
+        combocategoria = new javax.swing.JComboBox<>();
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
+
+        labeltitulo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        labeltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labeltitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cubeBlack.png"))); // NOI18N
+        labeltitulo.setText("Administrar Productos");
+
+        TablaProductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(TablaProductos);
+
+        BtnActualizar.setBackground(new java.awt.Color(0, 110, 144));
+        BtnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        BtnActualizar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/floppy-disk-pen.png"))); // NOI18N
+        BtnActualizar.setText("Actualizar");
+
+        BtnEliminar.setBackground(new java.awt.Color(0, 110, 144));
+        BtnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        BtnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/trash.png"))); // NOI18N
+        BtnEliminar.setText("Eliminar");
+
+        BtnVolver.setBackground(new java.awt.Color(0, 110, 144));
+        BtnVolver.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        BtnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        BtnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/angle-left.png"))); // NOI18N
+        BtnVolver.setText("Volver");
+
+        nombrelabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        nombrelabel.setText("Nombre:");
+
+        labelcantidad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        labelcantidad.setText("Cantidad:");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setText("Precio:");
+
+        descripcionlabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        descripcionlabel.setText("Descripcion:");
+
+        ivalabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ivalabel.setText("I.V.A:");
+
+        categorialabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        categorialabel.setText("Categoría:");
+
+        comboiva.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione IVA:", "No grava IVA", "5%", "10%", " " }));
+
+        combocategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione categoría:", "Item 2", "Item 3", "Item 4", " " }));
 
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
         BackgroundLayout.setHorizontalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 752, Short.MAX_VALUE)
+            .addComponent(labeltitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(BtnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addComponent(BtnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95)
+                .addComponent(BtnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84))
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nombrelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtcantidad, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                            .addComponent(txtNombre))
+                        .addGap(18, 18, 18)
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(BackgroundLayout.createSequentialGroup()
+                                .addComponent(descripcionlabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtdescripcion))
+                            .addGroup(BackgroundLayout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ivalabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(categorialabel, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(comboiva, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(combocategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 436, Short.MAX_VALUE)
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labeltitulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnActualizar)
+                    .addComponent(BtnEliminar)
+                    .addComponent(BtnVolver))
+                .addGap(18, 18, 18)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNombre)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nombrelabel, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ivalabel)
+                    .addComponent(comboiva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtcantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(descripcionlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(categorialabel)
+                    .addComponent(combocategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(105, 105, 105))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -56,5 +201,25 @@ public class GestionarProductoPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
+    private javax.swing.JButton BtnActualizar;
+    private javax.swing.JButton BtnEliminar;
+    private javax.swing.JButton BtnVolver;
+    public static javax.swing.JTable TablaProductos;
+    private javax.swing.JLabel categorialabel;
+    private javax.swing.JComboBox<String> combocategoria;
+    private javax.swing.JComboBox<String> comboiva;
+    private javax.swing.JLabel descripcionlabel;
+    private javax.swing.JLabel ivalabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelcantidad;
+    private javax.swing.JLabel labeltitulo;
+    private javax.swing.JLabel nombrelabel;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtPrecio;
+    private javax.swing.JTextField txtcantidad;
+    private javax.swing.JTextField txtdescripcion;
     // End of variables declaration//GEN-END:variables
+    
+
 }
