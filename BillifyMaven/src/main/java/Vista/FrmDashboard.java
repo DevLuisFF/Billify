@@ -152,6 +152,11 @@ public class FrmDashboard extends javax.swing.JFrame {
         BtnClientes.setBorder(null);
         BtnClientes.setBorderPainted(false);
         BtnClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnClientesActionPerformed(evt);
+            }
+        });
 
         BtnCategorias.setBackground(new java.awt.Color(0, 110, 144));
         BtnCategorias.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
@@ -367,6 +372,16 @@ public class FrmDashboard extends javax.swing.JFrame {
         Content.revalidate();
         Content.repaint();
     }//GEN-LAST:event_BtnCategoriasActionPerformed
+
+    private void BtnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnClientesActionPerformed
+        ClientesPanel clientesPanel = new ClientesPanel();
+        clientesPanel.setSize(752, 436);
+        clientesPanel.setLocation(0,0);
+        Content.removeAll();
+        Content.add(clientesPanel, BorderLayout.CENTER);
+        Content.revalidate();
+        Content.repaint();
+    }//GEN-LAST:event_BtnClientesActionPerformed
 
     /**
      * @param args the command line arguments
